@@ -48,7 +48,7 @@ func displayPremiumInteractions(premium *struct {
 	OveragePermitted bool    `json:"overage_permitted"`
 },
 ) {
-	fmt.Println(bold + yellow + "🚀 Premium Interactions" + reset)
+	fmt.Println(bold + yellow + "🚀 Premium Requests" + reset)
 
 	used, usagePercent := calculateUsage(premium.Entitlement, premium.Remaining)
 
@@ -129,7 +129,7 @@ func displayQuotaReset(resetDate string) {
 		return
 	}
 
-	fmt.Println(bold + yellow + "⏰ Quota Reset Information" + reset)
+	fmt.Println(bold + yellow + "⏰ Quota Reset Info" + reset)
 
 	if t, err := time.Parse("2006-01-02", resetDate); err == nil {
 		resetDate = t.Format("Jan 2, 2006")
