@@ -33,6 +33,10 @@ func makeProgressBar(percent float64, width int) string {
 		color = green
 	}
 
+	if gray == "" { // NO_COLOR active (colors disabled)
+		emptyBar = strings.Repeat(" ", width-filled)
+	}
+
 	return color + filledBar + gray + emptyBar + reset
 }
 
